@@ -6,7 +6,7 @@ BOT: TeleBot = TeleBot(_API_TOKEN)
 
 COMMANDS: Tuple[str, ...] = ('start', 'help')
 WELCOME_MESSAGE: str = "Hey! I'm a bot of an Estore, how can i help you?"
-ERROR_MESSAGE: str = "Sorry I can't figure our your request, please use buttons!"
+ERROR_MESSAGE: str = "Sorry I can't figure our your request, please use request_button!"
 DELIVERY_METHODS: str = 'Delivery methods'
 DELIVERY_REPLY: str = 'Courier delivery, USA Post Office'
 PAYMENT_METHODS: str = 'Payment methods'
