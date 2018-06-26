@@ -3,7 +3,7 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 
 class Button(ABC):
-    """Abstraction of keyboard buttons."""
+    """Abstraction of keyboard reply."""
 
     @abstractmethod
     def stores(self) -> KeyboardButton:
@@ -22,12 +22,12 @@ class Menu(ABC):
     """Abstraction of keyboard menu."""
 
     @abstractmethod
-    def buttons(self):
+    def reply(self) -> None:
         pass
 
 
 class MenuButton(Button):
-    """Chatbot menu buttons."""
+    """Chatbot menu reply."""
 
     def __init__(self) -> None:
         self._stores: KeyboardButton = KeyboardButton('Stores addresses', request_location=True)
@@ -45,11 +45,11 @@ class MenuButton(Button):
 
 
 class MarkUpMenu(Menu):
-    """Chatbot markup menu with buttons buttons."""
+    """Chatbot markup menu with reply buttons."""
 
     def __init__(self) -> None:
         self._reply_keyboard: ReplyKeyboardMarkup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
         self._button: Button = MenuButton()
 
-    def buttons(self):
-        return self._reply_keyboard.add(self._button.stores(), self._button.delivery(), self._button.payment())
+    def reply(self) -> None:
+        self._reply_keyboard.add(self._button.stores(), self._button.delivery(), self._button.payment())
