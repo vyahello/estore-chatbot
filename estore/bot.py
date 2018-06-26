@@ -1,3 +1,4 @@
+from typing import List
 from geopy.distance import vincenty
 from telebot import TeleBot
 from telebot.types import Message
@@ -29,9 +30,9 @@ def stores_location(message: Message):
     lon: float = message.location.longitude
     lat: float = message.location.latitude
 
-    distance = []
+    distance: List[...] = []
     for loc in STORES:
-        result: vincenty = vincenty((loc['lats'], loc['lons']), (lat, lon))
+        result: float = vincenty((loc['lats'], loc['lons']), (lat, lon)).kilometers
         distance.append(result)
     index = distance.index(min(distance))
     bot.send_message(message.chat.id, NEAREST_STORE)
