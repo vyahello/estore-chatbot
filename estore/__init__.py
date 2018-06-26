@@ -1,16 +1,17 @@
 from typing import Tuple, List
-from telebot import TeleBot
+from estore.menu.keyboards import Keyboard, BotKeyboard, MarkUpKeyboardMenu, Menu
 
-_API_TOKEN: str = '550173812:AAG9eR9G-jLvfKAgTGzZMAPL4IdlAb1jjWc'
-BOT: TeleBot = TeleBot(_API_TOKEN)
+API_TOKEN: str = '550173812:AAG9eR9G-jLvfKAgTGzZMAPL4IdlAb1jjWc'
+DELIVERY: str = MarkUpKeyboardMenu().replies().delivery()
+PAYMENT: str = MarkUpKeyboardMenu().replies().payment()
 
 COMMANDS: Tuple[str, ...] = ('start', 'help')
 WELCOME_MESSAGE: str = "Hey! I'm a bot of an Estore, how can i help you?"
-ERROR_MESSAGE: str = "Sorry I can't figure our your request, please use request_button!"
+ERROR_MESSAGE: str = "Sorry I can't figure our your request, please use buttons below!"
 DELIVERY_METHODS: str = 'Delivery methods'
-DELIVERY_REPLY: str = 'Courier delivery, USA Post Office'
+DELIVERY_REPLY: str = 'Courier delivery, Post Office'
 PAYMENT_METHODS: str = 'Payment methods'
-PAYMENT_REPLY: str = 'Cash, bank transaction'
+PAYMENT_REPLY: str = 'Cash, bank transaction, bank card'
 LOCATION: List[str] = ['location']
 NEAREST_STORE: str = 'Here is a nearest store according to your location'
 
