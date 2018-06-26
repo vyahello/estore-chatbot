@@ -2,9 +2,11 @@ from typing import Tuple, List
 from telebot import TeleBot
 
 _API_TOKEN: str = '550173812:AAG9eR9G-jLvfKAgTGzZMAPL4IdlAb1jjWc'
+BOT: TeleBot = TeleBot(_API_TOKEN)
 
 COMMANDS: Tuple[str, ...] = ('start', 'help')
 WELCOME_MESSAGE: str = "Hey! I'm a bot of an Estore, how can i help you?"
+ERROR_MESSAGE: str = "Sorry I can't figure our your request, please use buttons!"
 DELIVERY_METHODS: str = 'Delivery methods'
 DELIVERY_REPLY: str = 'Courier delivery, USA Post Office'
 PAYMENT_METHODS: str = 'Payment methods'
@@ -28,5 +30,3 @@ STORES: Tuple[dict, ...] = (
      'lats': '50.436446',
      'address': 'Ivana Mazepy St, 17'},
 )
-
-BOT: TeleBot = TeleBot(_API_TOKEN)
