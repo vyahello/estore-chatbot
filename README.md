@@ -6,6 +6,10 @@ Run script from the root directory of the project:
 ```bash
 ~ python bot.py
 ```
+
+## Demo
+![Screenshot](estore/demo/bot.png)
+
 ## Contributing
 
 ### Setup
