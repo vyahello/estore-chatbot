@@ -1,6 +1,11 @@
 # Book store telegram bot
 A telegram bot written with powerful python telegram library [https://github.com/eternnoir/pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI).
 
+## Run an estore telegram bot
+Run script from the root directory of the project:
+```bash
+~ python bot.py
+```
 ## Contributing
 
 ### Setup
