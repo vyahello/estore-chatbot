@@ -2,11 +2,12 @@ from typing import List
 from geopy.distance import vincenty
 from telebot import TeleBot
 from telebot.types import Message
-from estore import COMMANDS, WELCOME_MESSAGE, DELIVERY_METHODS, DELIVERY_REPLY, PAYMENT_METHODS, PAYMENT_REPLY, \
-    LOCATION, NEAREST_STORE, STORES, ERROR_MESSAGE, API_TOKEN, MarkUpKeyboardMenu, Menu
+from estore.bot import API_TOKEN, COMMANDS, WELCOME_MESSAGE, ERROR_MESSAGE, DELIVERY_METHODS, DELIVERY_REPLY, \
+    PAYMENT_METHODS, PAYMENT_REPLY, LOCATION, NEAREST_STORE, STORES
+from estore.menu.keyboards import Menu, MarkUpKeyboardMenu, BotKeyboard
 
 bot: TeleBot = TeleBot(API_TOKEN)
-menu: Menu = MarkUpKeyboardMenu()
+menu: Menu = MarkUpKeyboardMenu(BotKeyboard(resize_keyboard=True, row_width=1))
 
 
 @bot.message_handler(commands=COMMANDS)

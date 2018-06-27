@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from telebot.types import ReplyKeyboardMarkup, InlineKeyboardMarkup
-from estore.menu.buttons import RequestButtons, RequestKeyboardButtons, ReplyButtons, ReplyKeyboardButtons
+from estore.menu.buttons import ReplyButtons, ReplyKeyboardButtons, RequestButtons, RequestKeyboardButtons
 
 
 class InlineKeyboard(ABC):
@@ -114,8 +114,7 @@ class RequestKeyboard:
 class MarkUpKeyboardMenu(Menu):
     """Chat bot markup menu with reply button."""
 
-    def __init__(self) -> None:
-        keyboard: Keyboard = BotKeyboard(resize_keyboard=True, row_width=1)
+    def __init__(self, keyboard: Keyboard) -> None:
         self._request_keyboard: RequestKeyboard = RequestKeyboard(keyboard)
         self._reply_keyboard: InlineKeyboard = ReplyInlineKeyboard(keyboard)
 

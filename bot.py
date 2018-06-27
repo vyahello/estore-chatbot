@@ -1,4 +1,4 @@
-from estore.bot import bot
+from estore.bot.runner import bot
 
 
 def _run() -> None:
