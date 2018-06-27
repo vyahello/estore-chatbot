@@ -3,22 +3,23 @@ from geopy.distance import vincenty
 from telebot import TeleBot
 from telebot.types import Message
 from estore import COMMANDS, WELCOME_MESSAGE, DELIVERY_METHODS, DELIVERY_REPLY, PAYMENT_METHODS, PAYMENT_REPLY, \
-    LOCATION, NEAREST_STORE, STORES, ERROR_MESSAGE, DELIVERY, PAYMENT, API_TOKEN, MarkUpKeyboardMenu
+    LOCATION, NEAREST_STORE, STORES, ERROR_MESSAGE, API_TOKEN, MarkUpKeyboardMenu, Menu
 
 bot: TeleBot = TeleBot(API_TOKEN)
+menu: Menu = MarkUpKeyboardMenu()
 
 
 @bot.message_handler(commands=COMMANDS)
 def send_message(message: Message) -> None:
-    bot.reply_to(message, WELCOME_MESSAGE, reply_markup=MarkUpKeyboardMenu().requests())
+    bot.reply_to(message, WELCOME_MESSAGE, reply_markup=menu.requests())
 
 
 @bot.message_handler(func=lambda message: True)
 def reply_all(message: Message) -> None:
     if message.text == DELIVERY_METHODS:
-        bot.reply_to(message, DELIVERY_REPLY, reply_markup=DELIVERY)
+        bot.reply_to(message, DELIVERY_REPLY, reply_markup=menu.replies().delivery())
     elif message.text == PAYMENT_METHODS:
-        bot.reply_to(message, PAYMENT_REPLY, reply_markup=PAYMENT)
+        bot.reply_to(message, PAYMENT_REPLY, reply_markup=menu.replies().payment())
     else:
         bot.reply_to(message, ERROR_MESSAGE)
 

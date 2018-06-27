@@ -2,8 +2,6 @@ from typing import Tuple, List
 from estore.menu.keyboards import Keyboard, BotKeyboard, MarkUpKeyboardMenu, Menu
 
 API_TOKEN: str = '550173812:AAG9eR9G-jLvfKAgTGzZMAPL4IdlAb1jjWc'
-DELIVERY: str = MarkUpKeyboardMenu().replies().delivery()
-PAYMENT: str = MarkUpKeyboardMenu().replies().payment()
 
 COMMANDS: Tuple[str, ...] = ('start', 'help')
 WELCOME_MESSAGE: str = "Hey! I'm a bot of an Estore, how can i help you?"
