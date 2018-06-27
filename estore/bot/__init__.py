@@ -5,9 +5,9 @@ COMMANDS: Tuple[str, ...] = ('start', 'help')
 WELCOME_MESSAGE: str = "Hey! I'm a bot of an Estore, how can i help you?"
 ERROR_MESSAGE: str = "Sorry I can't figure our your request, please use buttons below!"
 DELIVERY_METHODS: str = 'Delivery methods'
-DELIVERY_REPLY: str = 'Courier delivery, Post Office'
+DELIVERY_REPLY: str = 'Here are next delivery methods'
 PAYMENT_METHODS: str = 'Payment methods'
-PAYMENT_REPLY: str = 'Cash, bank transaction, bank card'
+PAYMENT_REPLY: str = 'Here are next payment methods'
 LOCATION: List[str] = ['location']
 NEAREST_STORE: str = 'Here is a nearest store according to your location'
 
