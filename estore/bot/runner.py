@@ -4,7 +4,8 @@ from telebot import TeleBot
 from telebot.types import Message
 from estore.bot import API_TOKEN, COMMANDS, WELCOME_MESSAGE, ERROR_MESSAGE, DELIVERY_METHODS, DELIVERY_REPLY, \
     PAYMENT_METHODS, PAYMENT_REPLY, LOCATION, NEAREST_STORE, STORES
-from estore.menu.keyboards import Menu, MarkUpKeyboardMenu, BotKeyboard
+from estore.options.keyboards import BotKeyboard
+from estore.options.menu import Menu, MarkUpKeyboardMenu
 
 bot: TeleBot = TeleBot(API_TOKEN)
 menu: Menu = MarkUpKeyboardMenu(BotKeyboard(resize_keyboard=True, row_width=1))
