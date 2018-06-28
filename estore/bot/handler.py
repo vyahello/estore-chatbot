@@ -28,7 +28,7 @@ def reply_all(message: Message) -> None:
 
 @bot.callback_query_handler(func=lambda call: True)
 def call_back(call: CallbackQuery) -> None:
-    method: str = 'payment' if call.data is ('cash' or 'card' or 'invoice') else 'delivery'
+    method: str = 'payment' if call.data in ('cash', 'card', 'invoice') else 'delivery'
     reply = menu.replies().payment() if method is 'payment' else menu.replies().delivery()
     bot.send_message(call.message.chat.id,
                      text=MESSAGE[method]['call_back'][call.data],
