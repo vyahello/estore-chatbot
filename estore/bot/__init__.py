@@ -1,15 +1,28 @@
-from typing import Tuple, List
+from typing import Tuple, List, Dict, Any
 
 API_TOKEN: str = '550173812:AAG9eR9G-jLvfKAgTGzZMAPL4IdlAb1jjWc'
 COMMANDS: Tuple[str, ...] = ('start', 'help')
-WELCOME_MESSAGE: str = "Hey! I'm a bot of an Estore, how can i help you?"
-ERROR_MESSAGE: str = "Sorry I can't figure our your request, please use buttons below!"
-DELIVERY_METHODS: str = 'Delivery methods'
-DELIVERY_REPLY: str = 'Here are next delivery methods'
-PAYMENT_METHODS: str = 'Payment methods'
-PAYMENT_REPLY: str = 'Here are next payment methods'
+
 LOCATION: List[str] = ['location']
-NEAREST_STORE: str = 'Here is a nearest store according to your location'
+
+MESSAGE: Dict[Any, Any] = {
+    'welcome': "Hey! I'm a bot of an Estore, how can i help you?",
+    'error': "Sorry I can't figure our your request, please use buttons below!",
+    'delivery': {
+        'methods': 'Delivery methods', 'reply': 'Here are next delivery methods', 'call_back': {
+            'courier delivery': 'Our courier can easily deliver the deed right upon your home',
+            'post office': 'You can pick up your deed in a post office'
+        }
+    },
+    'payment': {
+        'methods': 'Payment methods', 'reply': 'Here are next payment methods', 'call_back': {
+            'cash': 'Cash payment is conducted in store counter in USD',
+            'card': 'Bank card payment is conducted with your VISA/Mastercard',
+            'invoice': 'You can pay for a deed with your bank transaction'
+        }
+    },
+    'nearest_store': 'Here is a nearest store according to your location'
+}
 
 STORES: Tuple[dict, ...] = (
     {'title': 'London Estore',
