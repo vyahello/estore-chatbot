@@ -1,5 +1,6 @@
 # Estore telegram bot
-A telegram bot written with powerful python telegram library [https://github.com/eternnoir/pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI).
+- A telegram bot written with powerful python telegram library [https://github.com/eternnoir/pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI) served by [https://www.pythonanywhere.com/](https://www.pythonanywhere.com/).
+- Bot is called `EstoreChatBot`. To try it search for it in the `Telegram` app. 
 
 ## Run an estore telegram bot
 Run script from the root directory of the project:

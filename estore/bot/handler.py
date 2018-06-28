@@ -1,7 +1,7 @@
 from typing import List
 from geopy.distance import vincenty
 from telebot import TeleBot
-from telebot.types import Message, CallbackQuery
+import telebot
 from estore.bot import API_TOKEN, COMMANDS, MESSAGE, LOCATION, STORES
 from estore.options.keyboards import BotKeyboard
 from estore.options.menu import Menu, MarkUpKeyboardMenu
@@ -11,12 +11,12 @@ menu: Menu = MarkUpKeyboardMenu(BotKeyboard(resize_keyboard=True, row_width=1))
 
 
 @bot.message_handler(commands=COMMANDS)
-def send_message(message: Message) -> None:
+def send_message(message: telebot.types.Message) -> None:
     bot.reply_to(message, MESSAGE['welcome'], reply_markup=menu.requests())
 
 
 @bot.message_handler(func=lambda message: True)
-def reply_all(message: Message) -> None:
+def reply_all(message: telebot.types.Message) -> None:
     reply = menu.replies()
     if message.text == MESSAGE['delivery']['methods']:
         bot.reply_to(message, MESSAGE['delivery']['reply'], reply_markup=reply.delivery())
@@ -27,7 +27,7 @@ def reply_all(message: Message) -> None:
 
 
 @bot.callback_query_handler(func=lambda call: True)
-def call_back(call: CallbackQuery) -> None:
+def call_back(call: telebot.types.CallbackQuery) -> None:
     method: str = 'payment' if call.data in ('cash', 'card', 'invoice') else 'delivery'
     reply = menu.replies().payment() if method is 'payment' else menu.replies().delivery()
     bot.send_message(call.message.chat.id,
@@ -36,7 +36,7 @@ def call_back(call: CallbackQuery) -> None:
 
 
 @bot.message_handler(func=lambda message: True, content_types=LOCATION)
-def stores_location(message: Message) -> None:
+def stores_location(message: telebot.types.Message) -> None:
     lon: float = message.location.longitude
     lat: float = message.location.latitude
 
