@@ -25,15 +25,15 @@ MESSAGE: Dict[Any, Any] = {
 }
 
 STORES: Tuple[dict, ...] = (
-    {'title': 'London Estore',
-     'lons': '0.156853',
+    {'title': 'Poland Estore',
+     'lons': '20.156853',
      'lats': '51.520812',
-     'address': '34 Baker Street, Oatley, NSW 2223'},
+     'address': 'Majora Henryka Dobrzańskiego "Hubala" 35, 97-215, Poland'},
 
-    {'title': 'Toronto Estore',
-     'lons': '79.345748',
-     'lats': '43.704126',
-     'address': '27 N Grandstand N Ramp'},
+    {'title': 'Norway Estore',
+     'lons': '10.156853',
+     'lats': '61.520812',
+     'address': 'E6, 2630 Ringebu, Norway'},
 
     {'title': 'Kyiv Estore',
      'lons': '30.553835',
