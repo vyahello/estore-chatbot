@@ -1,5 +1,5 @@
 # Estore telegram bot
-It is a sample telegram bot based on internet store idea which is written with powerful python telegram library [https://github.com/eternnoir/pyTelegramBotAPI](pyTelegramBotAPI). Bot is called `EstoreChatBot`. To try it search for it in the `Telegram` app. 
+It is a sample telegram bot based on internet store idea which is written with powerful python telegram library [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI). Bot is called `EstoreChatBot`. To try it search for it in the `Telegram` app. 
 
 ## Run an estore telegram bot
 Run script from the root directory of the project:
