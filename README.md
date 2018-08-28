@@ -1,6 +1,5 @@
 # Estore telegram bot
-- A telegram bot written with powerful python telegram library [https://github.com/eternnoir/pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI) served by [https://www.pythonanywhere.com/](https://www.pythonanywhere.com/).
-- Bot is called `EstoreChatBot`. To try it search for it in the `Telegram` app. 
+It is a sample telegram bot based on internet store idea which is written with powerful python telegram library [https://github.com/eternnoir/pyTelegramBotAPI](pyTelegramBotAPI). Bot is called `EstoreChatBot`. To try it search for it in the `Telegram` app. 
 
 ## Run an estore telegram bot
 Run script from the root directory of the project:
@@ -12,13 +11,11 @@ Run script from the root directory of the project:
 ![Screenshot](estore/demo/bot.png)
 
 ## Contributing
-
-### Setup
 - clone the repository
 - configure Git for the first time after cloning with your name and email
   ```bash
   git config --local user.name "Volodymyr Yahello"
-  git config --local user.email "vjagello93@gmail.com"
+  git config --local user.email "vyahello@gmail.com"
   ```
 - `python3.6` is required to run the code
 - run `pip install -r requirements.txt` to install all required python packages
